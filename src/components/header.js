@@ -24,12 +24,17 @@ export default class Header extends React.Component {
         })
     }
     render() {
+        if (this.state.showInstructions===false) {
         return (
             <header>
                 <TopNav onWhat={() => this.showInstructions()} />
-                <InfoModal onGotIt={() => this.hideInstructions()} />
                 <h1>HOT or COLD</h1>
             </header>
-        );
+        )} else {
+        return (
+            <InfoModal onGotIt={() => this.hideInstructions()} />
+        )}
     }
-};
+    
+}
+
